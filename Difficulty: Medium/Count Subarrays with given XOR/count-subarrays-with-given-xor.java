@@ -6,10 +6,11 @@ class Solution {
         
         HashMap<Integer, Integer> map = new HashMap<>();
         
-        map.put(0,1);
-        
         for(int num : arr){
             xor = xor^num;
+            if(xor == k){
+                count++;
+            }
             if(map.containsKey(xor ^ k)){
                 count += map.get(xor^k);
             }
